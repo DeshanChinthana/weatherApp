@@ -1,28 +1,17 @@
 import React from 'react';
 import './App.css';
-import { QueryClient, QueryClientProvider } from 'react-query';
 import Home from './components/Home';
-// import CitySingle from './components/CitySingle';
-// import { Route, Routes } from 'react-router';
-// import { BrowserRouter } from 'react-router-dom';
-
-
-const queryClient = new QueryClient(); // for call APIs.
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 function App() {
 
     return (
 
         <>
-            <QueryClientProvider client={queryClient}>
+            <Provider store={store}>
                 <Home />
-            </QueryClientProvider>
-
-            {/* <BrowserRouter>
-                <Routes>
-                    <Route path="/CitySingle" element={<CitySingle />} />
-                </Routes>
-            </BrowserRouter> */}
+            </Provider>
         </>
 
     );

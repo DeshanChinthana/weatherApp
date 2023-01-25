@@ -69,7 +69,6 @@ function App() {
                                         <span className='parameter-label'>Pressure:&nbsp;</span>
                                         <span className='parameter-value'>
                                             1015hPa
-                                            {/* {Math.round(22.3)}°C */}
                                         </span>
                                     </div>
                                     <div className='parameter-row-start'>

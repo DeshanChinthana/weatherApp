@@ -6,15 +6,12 @@ import FilterDramaOutlinedIcon from '@mui/icons-material/FilterDramaOutlined';
 import NearMeOutlinedIcon from '@mui/icons-material/NearMeOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
-// import axios from 'axios';
 import { Button, FormGroup, Grid, Typography } from '@mui/material';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import moment from 'moment/moment';
-// import { Link } from 'react-router-dom';
-// import { BrowserRouter as Router } from 'react-router-dom';
 
 // set date, time format for current time and date
 const adjustForTimezone = (timezone) => {
@@ -45,7 +42,7 @@ const weatherDefaultHc = '#1864b3';
 function City({ obj }) {
 
     // for close city card
-    const [cityArr, setCities] = useState(() => obj);
+    const [cityArr, setCities] = useState(obj);
 
     // for search city
     const [search, setSearch] = useState('');
@@ -55,9 +52,12 @@ function City({ obj }) {
     // for pseudo elements func
     const parentRef = useRef(null);
 
-
     // City search
     const cityList = cities.List;
+
+    useEffect(() => {
+        setCities(obj)
+    }, [obj])
 
     useEffect(() => {
         setFilterData(
@@ -88,7 +88,6 @@ function City({ obj }) {
 
         <>
             <Grid container className='content-center'>
-
                 <Grid item xs={12} md={12} className='container-inner-top'>
 
                     <Grid item className='top-sec'>
@@ -125,10 +124,8 @@ function City({ obj }) {
                     <Grid item xs={12} md={10} className='grid-cont-outer margin-remove'>
 
                         <Grid container row>
-                            {cityArr.map((city, index) =>
+                            {cityArr?.map((city, index) =>
                                 <Grid item xs={12} sm={12} md={6} className='cardOuter' key={city.name}>
-
-                                    {/* <Link to='CitySingle' relative="path" style={{ textDecoration: 'none' }}> */}
 
                                     <div className='weather'>
                                         <div className='close-btn'><CloseIcon color='white' onClick={() => removeCity(index)} /></div>
@@ -209,8 +206,6 @@ function City({ obj }) {
                                         </div>
                                     </div>
 
-                                    {/* </Link> */}
-
                                 </Grid>
                             )}
                         </Grid>
@@ -254,7 +249,6 @@ function City({ obj }) {
                                             <span className='parameter-label'>Pressure:&nbsp;</span>
                                             <span className='parameter-value'>
                                                 1015hPa
-                                                {/* {Math.round(22.3)}°C */}
                                             </span>
                                         </div>
                                         <div className='parameter-row-start'>
@@ -299,12 +293,8 @@ function City({ obj }) {
                 <Grid item xs={12} md={12} className='container-inner-bottom'>
                     <Typography className='footerText'>2023 Fidenz Technologies</Typography>
                 </Grid>
-
             </Grid >
         </>
-
-
-
     );
 }
 
