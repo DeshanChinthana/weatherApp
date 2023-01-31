@@ -1,8 +1,17 @@
-import React from 'react'
+import React from 'react';
+import { useParams } from 'react-router';
+import CitySingleMain from './CitySingleMain';
 
 function CitySingle() {
+
+    const { wData } = useParams(); // catch parsed data in the url
+
     return (
-        <div>citySingle</div>
+        <div>
+
+            <CitySingleMain />
+
+        </div>
     )
 }
 

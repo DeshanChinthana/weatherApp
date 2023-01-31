@@ -10,7 +10,7 @@ const cacheMiddleware = (store) => (next) => (action) => {
 
         // Otherwise, continue with the fetch and store the data and timestamp in localStorage
         return next(action).then((result) => {
-            localStorage.setItem("weatherData", JSON.stringify(result.payload));
+            localStorage.setItem("weatherData", JSON.stringify(result.payload)); // set weather data after converting the payload object to a sting. 
             localStorage.setItem("weatherTimestamp", Date.now());
             return result;
         });

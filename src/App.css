@@ -213,7 +213,6 @@ input {
   margin: 20px !important;
 }
 
-
 .weather,
 .weather-city {
   position: relative;
@@ -223,7 +222,6 @@ input {
   color: #fff;
   background-color: #333;
   margin: 20px auto;
-  /* padding: 0 20px 20px 20px; */
 }
 
 .weather-city {
@@ -251,7 +249,6 @@ input {
 .bottom {
   display: flex;
   justify-content: space-around;
-  /* justify-content: space-between; */
   align-items: center;
   text-align: center;
 }
@@ -259,6 +256,7 @@ input {
 .top {
   position: relative;
   max-height: 60%;
+  color: #fff;
   background-color: #388ee7;
   border-radius: 7px 7px 0 0;
   padding: 60px 10px 26px;
@@ -282,6 +280,7 @@ input {
 .bottom {
   position: relative;
   max-height: 40%;
+  color: #fff;
   background-color: #383b47;
   border-radius: 0 0 7px 7px;
   padding: 20px;
@@ -321,29 +320,6 @@ input {
   padding-left: 10px;
 }
 
-/*.push-up-i-city {
-  position: absolute;
-  top: 160px;
-  left: 304px;
-}
-
-.push-up-i-city svg {
-  width: 50px;
-  height: 50px;
-}
-
-.push-up {
-  position: absolute;
-  top: -6px;
-  left: 56px;
-}
-
-.push-up-city {
-  position: absolute;
-  top: -4px;
-  left: 60px;
-} */
-
 .weather-icon {
   width: 100px;
 }
@@ -353,6 +329,7 @@ input {
 }
 
 .temperature {
+  color: #fff;
   font-weight: 500;
   font-size: 52px;
   width: auto;
@@ -365,33 +342,14 @@ input {
 .push-max-temp-city,
 .push-min-temp,
 .push-min-temp-city {
-  /* position: absolute;
-  right: -3px;
-  bottom: 5px; */
   text-align: center !important;
 }
-
-/* .push-min-temp {
-  right: -2px;
-  bottom: 26px;
-} */
-
-/* .push-min-temp-city {
-  right: 16px;
-  bottom: 26px;
-}
-
-.push-max-temp-city {
-  right: 14px;
-  bottom: 5px;
-} */
 
 .details {
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* padding-left: 20px; */
 }
 
 .parameter-row,
@@ -700,8 +658,6 @@ input {
     bottom: 17px;
   }
 
-  /* .push-max-temp-city {} */
-
   .divider,
   .divider-city,
   .divider-city-top {
@@ -741,10 +697,6 @@ input {
     margin-left: 12px;
     ;
   }
-
-  /* .push-up-city {
-    
-  } */
 
   .divider-city-top::before {
     height: 23%;

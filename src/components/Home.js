@@ -4,21 +4,26 @@ import City from './City';
 import { useSelector, useDispatch } from "react-redux";
 import { fetchWeatherData } from '../actions/weatherActions';
 
-const ids = [
-    cities.List[0].CityCode,
-    cities.List[1].CityCode,
-    cities.List[2].CityCode,
-    cities.List[3].CityCode,
-    cities.List[4].CityCode,
-    cities.List[5].CityCode,
-    cities.List[6].CityCode,
-    cities.List[7].CityCode
-];
+// get CityCode from cities.json and iterate. Then push data to empty array 
+const ids = [];
+
+cities.List.map((cCode) => (
+    ids.push(cCode.CityCode)
+))
 
 function Home() {
 
     const dispatch = useDispatch();
     const { data, loading, error, timestamp } = useSelector((state) => state);
+
+    // const city = cities.List;
+    // const [ids, setIds] = useState([]);
+
+    // useEffect(() => {
+    //     city.map((cCode) => (
+    //         setIds(current => [...current, cCode.CityCode])
+    //     ))
+    // }, [city])
 
     useEffect(() => {
         if (!data || Date.now() - timestamp > 300000) {
